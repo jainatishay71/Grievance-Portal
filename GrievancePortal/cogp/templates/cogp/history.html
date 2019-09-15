@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	<title>Complaints History</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'cogp/style.css' %}">
+</head>
+<body>
+	{% for element in listt %}
+		{{element.cquery}} -- {{element.status|linebreaks}}
+	{% endfor %}
+</body>
+</html>

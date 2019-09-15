@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	<title>Complaint</title>
+	<link rel="stylesheet" type="text/css" href="complaint.css">
+</head>
+<body>
+	<style>
+		body
+		{
+		    background-image: url("../static/cogp/images/img.JPG");
+		    -webkit-background-size:cover;
+		    -moz-background-size:cover;
+		    background-size:cover;
+		}
+
+		select 
+		{
+			height: 45px;
+			width: 200px;
+			position: absolute;
+			top: 100px; left: 300px;
+
+			border: 1px solid black;
+		    background-color: transparent;
+		}
+		textarea
+		{
+			position: absolute;
+			top: 150px; left: 300px;
+		}
+		#submit
+		{
+			position: absolute;
+			top: 250px; left: 300px;
+		}
+	</style>
+	<form method="post" action="/cogp/complaint/postc">
+		{% csrf_token %}
+		<select name="Department">
+			<option value="plumbing">Plumbing</option>
+			<option value="electrical">Electrical</option>
+			<option value="furniture">Furniture</option>
+			<option value="lan">Lan</option>
+		</select><br>
+		<textarea rows="5" cols="50" name="Query"></textarea>
+		<input id="submit" type="submit" name="Post">
+	</form>
+</body>
+</html>

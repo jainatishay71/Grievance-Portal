@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'cogp/style.css' %}">
+</head>
+<body>
+	{% for element in listt %}
+		{{element.cquery}}   
+
+		<!-- <form method="POST" action="/cogp/ahome/resolve">
+			{% csrf_token %}
+			Assignee -- <input type="text" name="assignee"><br>
+			Status -- <input type="text" name="status">
+			<input type="hidden" name="cquery" value="{{element.cquery}}" />
+			<input type="submit" value="Submit">
+		</form> -->
+	{% endfor %}
+</body>
+</html>
